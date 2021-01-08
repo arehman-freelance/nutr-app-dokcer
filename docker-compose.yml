@@ -50,7 +50,7 @@ services:
       - assets-vol:/assets:rw
 
   erpnext-python:
-    image: arh/nutr-worker:latest
+    image: mavenarh/nutr-worker:latest
     restart: on-failure
     environment:
       - MARIADB_HOST=${MARIADB_HOST}
@@ -73,7 +73,7 @@ services:
       - sites-vol:/home/frappe/frappe-bench/sites:rw
 
   erpnext-worker-default:
-    image: arh/nutr-worker:latest
+    image: mavenarh/nutr-worker:latest
     restart: on-failure
     command: worker
     depends_on:
@@ -84,7 +84,7 @@ services:
       - nutr-app-vol:/home/frappe/frappe-bench/apps/nutr_app:rw
 
   erpnext-worker-short:
-    image: arh/nutr-worker:latest
+    image: mavenarh/nutr-worker:latest
     restart: on-failure
     command: worker
     environment:
@@ -97,7 +97,7 @@ services:
       - nutr-app-vol:/home/frappe/frappe-bench/apps/nutr_app:rw
 
   erpnext-worker-long:
-    image: arh/nutr-worker:latest
+    image: mavenarh/nutr-worker:latest
     restart: on-failure
     command: worker
     environment:
@@ -110,7 +110,7 @@ services:
       - nutr-app-vol:/home/frappe/frappe-bench/apps/nutr_app:rw
 
   erpnext-schedule:
-    image: arh/nutr-worker:latest
+    image: mavenarh/nutr-worker:latest
     restart: on-failure
     command: schedule
     depends_on:
@@ -148,7 +148,7 @@ services:
       - mariadb-vol:/var/lib/mysql
 
   # site-creator:
-  #   image: arh/nutr-worker:latest
+  #   image: mavenarh/nutr-worker:latest
   #   restart: "no"
   #   command: new
   #   depends_on:
